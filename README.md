@@ -45,6 +45,30 @@ Instead of adding node-by-node immediately, this solution uses an intuitive appr
 * Shift the running numeric sequence downwards via floor division (`total_sum //= 10`) to correctly strip the used values and gracefully close the loop.
 * Return `dummy.next` to safely omit the placeholder anchor and return the clean, reversed answer node sequence.
 
+
 ---
+
+## 📌 LeetCode #9: Palindrome Number
+* **Difficulty:** Easy  
+* **Topic:** Math, Two Pointers  
+* **Language:** Python 3  
+* **Performance:** 0 ms (Beats 100% of Python submissions!)  
+* **Problem Link:** https://leetcode.com/problems/palindrome-number/ 
+
+### 📝 Problem Statement
+Given an integer `x`, return `true` if `x` is a palindrome, and `false` otherwise. An integer is a palindrome when it reads the same backward as forward (e.g., `121` is a palindrome, while `123` is not).
+
+#### Example:
+```text
+Input: x = 121
+Output: true
+```
+
+### 💡 Core Solution Logic & Strategy
+1. **Immediate Edge Case:** Negative numbers (like `-121`) are instantly rejected (`return False`) because the trailing minus sign prevents them from reading identically backward.
+2. **Value Preservation:** Before running the extraction math, the original value of `x` is duplicated into a tracking variable (`a = x`). This is necessary because processing digits reduces the target down to `0`.
+3. **Mathematical Reversal:** A `while` loop extracts individual trailing numbers via modulo operations (`x % 10`), aggregates them into a running reversed sequence, and cuts the primary input value down systematically (`x //= 10`).
+4. **Final Evaluation:** Once the math loop terminates, the stored baseline signature (`a`) is checked directly against the newly assembled reversed sequence (`return a == reversed_num`).
+
 
 
