@@ -93,3 +93,21 @@ Explanation: L = 50, V = 5, III = 3.
 4. **Aggregation:** In all standard circumstances where values remain steady or decrease sequentially, simply increment the running `total_sum` calculation.
 
 
+# LeetCode Solutions
+
+A collection of my verified solutions for LeetCode algorithmic problems, tracked as part of my continuous coding practice.
+
+## 🚀 Solved Problems
+
+## 📝 Problem Breakdown
+
+### [14. Longest Common Prefix][(https://leetcode.com)](https://leetcode.com/problems/longest-common-prefix/)
+
+**Approach:** Vertical Scanning
+- **Concept:** Compare characters of all strings index by index, using the first string as a baseline anchor.
+- **Optimization:** Immediately returns the prefix slice the moment a character mismatch occurs or an out-of-bounds index condition is hit.
+
+#### Complexity Analysis
+- **Time Complexity:** $\mathcal{O}(S)$ where $S$ is the total sum of all characters across all strings in the input array.
+- **Space Complexity:** $\mathcal{O}(1)$ because the vertical scan checks characters in place without allocating extra memory structures.
+
