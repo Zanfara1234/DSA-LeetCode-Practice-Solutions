@@ -4,8 +4,7 @@ This repository tracks my journey solving algorithmic problems, refining my codi
 
 ---
 
-## 📌 LeetCode #2: Add Two Numbers
-* **Difficulty:** Medium  
+## 📌 LeetCode #2: Add Two Numbers 
 * **Topic:** Linked Lists, Math  
 * **Language:** Python 3  
 * **Problem Link:**  https://leetcode.com/problems/add-two-numbers/description/ 
@@ -48,8 +47,7 @@ Instead of adding node-by-node immediately, this solution uses an intuitive appr
 
 ---
 
-## 📌 LeetCode #9: Palindrome Number
-* **Difficulty:** Easy  
+## 📌 LeetCode #9: Palindrome Number 
 * **Topic:** Math, Two Pointers  
 * **Language:** Python 3  
 * **Performance:** 0 ms (Beats 100% of Python submissions!)  
@@ -70,5 +68,28 @@ Output: true
 3. **Mathematical Reversal:** A `while` loop extracts individual trailing numbers via modulo operations (`x % 10`), aggregates them into a running reversed sequence, and cuts the primary input value down systematically (`x //= 10`).
 4. **Final Evaluation:** Once the math loop terminates, the stored baseline signature (`a`) is checked directly against the newly assembled reversed sequence (`return a == reversed_num`).
 
+
+---
+
+## 📌 LeetCode #13: Roman to Integer  
+* **Topic:** Hash Table, Math, String  
+* **Language:** Python 3  
+* **Problem Link:** (https://leetcode.com/problems/roman-to-integer/) 
+
+### 📝 Problem Statement
+Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`. Given a roman numeral, convert it to an integer.
+
+#### Example:
+```text
+Input: s = "LVIII"
+Output: 58
+Explanation: L = 50, V = 5, III = 3.
+```
+
+### 💡 Core Solution Logic & Strategy
+1. **Value Mapping:** Create a dictionary mapping each Roman numeral character symbol to its integer equivalent (e.g., `'I': 1`, `'V': 5`).
+2. **Lookahead Lookups:** Iterate through the string using indices. For each character, check if there is a next character available (`if i < len(s) - 1`).
+3. **Subtraction Rule Handling:** If a character's mapped numerical value is smaller than the following character's value (such as `I` appearing right before `V`), subtract its value from the tracker. 
+4. **Aggregation:** In all standard circumstances where values remain steady or decrease sequentially, simply increment the running `total_sum` calculation.
 
 
