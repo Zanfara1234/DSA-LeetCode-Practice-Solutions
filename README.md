@@ -111,3 +111,30 @@ A collection of my verified solutions for LeetCode algorithmic problems, tracked
 - **Time Complexity:** $\mathcal{O}(S)$ where $S$ is the total sum of all characters across all strings in the input array.
 - **Space Complexity:** $\mathcal{O}(1)$ because the vertical scan checks characters in place without allocating extra memory structures.
 
+
+
+# LeetCode Solutions
+
+A collection of my verified solutions for LeetCode algorithmic problems, tracked as part of my continuous coding practice.
+
+## 🚀 Solved Problems
+
+| # | Problem Title | Difficulty | Language | Solution |
+|---|---------------|------------|----------|----------|
+| 14 | [Longest Common Prefix](https://leetcode.com) | Easy | Python | [Solution](./14_longest_common_prefix.py) |
+| 21 | [Merge Two Sorted Lists](https://leetcode.com) | Easy | Python | [Solution](./21_merge_two_sorted_lists.py) |
+
+---
+
+## 📝 Problem Breakdown
+
+### [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+
+**Approach:** Two-Pointer Iteration with Dummy Head Node
+- **Concept:** Compare the head nodes of both lists, attach the smaller node to the building `tail`, and step that list pointer forward.
+- **Optimization:** Avoids handling complex starting edge cases by initializing a baseline `ListNode()`, and snaps remaining straggler nodes onto the tail in a single $\mathcal{O}(1)$ step using a ternary operation when one list runs dry.
+
+#### Complexity Analysis
+- **Time Complexity:** $\mathcal{O}(N + M)$ where $N$ and $M$ represent the total number of nodes in each independent linked list.
+- **Space Complexity:** $\mathcal{O}(1)$ as the sorting operations reconnect existing node object references directly in-place.
+
