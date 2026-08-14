@@ -138,3 +138,33 @@ A collection of my verified solutions for LeetCode algorithmic problems, tracked
 - **Time Complexity:** $\mathcal{O}(N + M)$ where $N$ and $M$ represent the total number of nodes in each independent linked list.
 - **Space Complexity:** $\mathcal{O}(1)$ as the sorting operations reconnect existing node object references directly in-place.
 
+
+# 🚀 LeetCode Solutions Portfolio
+
+Welcome! This repository tracks my journey solving data structures and algorithms challenges on LeetCode. It serves as a showcase of my problem-solving progress and code quality.
+
+## 🛠️ Solved Problems
+
+| # | Problem Title | Difficulty | Language | Solution Link |
+|---|---|---|---|---|
+| 26 | [Remove Duplicates from Sorted Array](https://leetcode.com) | 🟢 Easy | Python | [solution.py](./solution.py) |
+
+---
+
+## 📝 Problem Breakdown: #26 Remove Duplicates from Sorted Array
+
+### Problem Statement
+Given an integer array `nums` sorted in non-decreasing order, remove the duplicates **in-place** such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in `nums`.
+
+### Intuition & Approach
+Since the input array is already sorted, all duplicate elements sit right next to each other. 
+1. We track a `pointer` index that marks where the next unique element should be written.
+2. We loop through the array with a scanning index `i`.
+3. Whenever `nums[i]` is different from `nums[i-1]`, we know we've hit a brand new unique number.
+4. We copy that unique number forward to `nums[pointer]` and increment our `pointer`.
+
+```
+
+### Complexity
+- **Time Complexity:** $O(N)$ — We traverse the array exactly once, making it highly efficient.
+- **Space Complexity:** $O(1)$ — No extra arrays are created. The modification happens entirely in-place.
