@@ -168,3 +168,34 @@ Since the input array is already sorted, all duplicate elements sit right next t
 ### Complexity
 - **Time Complexity:** $O(N)$ — We traverse the array exactly once, making it highly efficient.
 - **Space Complexity:** $O(1)$ — No extra arrays are created. The modification happens entirely in-place.
+
+
+# 🚀 LeetCode Solutions Portfolio
+
+Welcome! This repository tracks my journey solving data structures and algorithms challenges on LeetCode. It serves as a showcase of my problem-solving progress.
+
+## 🛠️ Solved Problems
+
+| # | Problem Title | Difficulty | Language | Solution Link |
+|---|---|---|---|---|
+| 26 | [Remove Duplicates from Sorted Array](https://leetcode.com) | 🟢 Easy | Python | [solution.py](./remove-duplicates/solution.py) |
+| 27 | [Remove Element](https://leetcode.com) | 🟢 Easy | Python | [solution.py](./remove-element/solution.py) |
+
+---
+
+## 📝 Problem Breakdown: #27 Remove Element
+
+### Problem Statement
+Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` **in-place**. The order of the elements may be changed. Then return the number of elements in `nums` which are not equal to `val`.
+
+### Intuition & Approach
+This problem uses a two-pointer technique to filter out elements without creating a new list.
+1. We initialize a write pointer at the beginning of the array to track where valid elements go.
+2. We use a second pointer to scan through every number in the array sequentially.
+3. Every time we find a number that does not match the target value, we shift it forward to the write pointer's position and advance that pointer.
+4. If a number matches the target value, we simply skip past it.
+
+### Complexity
+- **Time Complexity:** $O(N)$ — The array is traversed exactly once.
+- **Space Complexity:** $O(1)$ — The filtering happens entirely in-place to optimize memory consumption.
+
