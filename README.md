@@ -7,7 +7,7 @@ This repository tracks my journey solving algorithmic problems, refining my codi
 ## 📌 LeetCode #2: Add Two Numbers 
 * **Topic:** Linked Lists, Math  
 * **Language:** Python 3  
-* **Problem Link:**  https://leetcode.com/problems/add-two-numbers/description/ 
+* **Problem Link:** https://leetcode.com 
 
 ### 📝 Problem Statement
 You are given two **non-empty** linked lists representing two non-negative integers. The digits are stored in **reverse order**, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
@@ -31,7 +31,7 @@ Instead of adding node-by-node immediately, this solution uses an intuitive appr
 * Traverse `l1` and `l2` independently using a loop.
 * Track a base-10 `multiplier` variable starting at `1` that scales up (`* 10`) with each node step.
 * Accumulate the values systematically to rebuild the full integer (`num1 = num1 + (node.val * multiplier)`). 
-* *Example:* Node values `2 -> 4 -> 3` translate cleanly into $(2 \times 1) + (4 \times 10) + (3 \times 100) = 342$.
+* *Example:* Node values `2 -> 4 -> 3` translate cleanly into \((2 \times 1) + (4 \times 10) + (3 \times 100) = 342\).
 
 #### 2. Summation & Edge Cases
 * Combine both calculated integers: `total_sum = num1 + num2`.
@@ -44,14 +44,13 @@ Instead of adding node-by-node immediately, this solution uses an intuitive appr
 * Shift the running numeric sequence downwards via floor division (`total_sum //= 10`) to correctly strip the used values and gracefully close the loop.
 * Return `dummy.next` to safely omit the placeholder anchor and return the clean, reversed answer node sequence.
 
-
 ---
 
 ## 📌 LeetCode #9: Palindrome Number 
 * **Topic:** Math, Two Pointers  
 * **Language:** Python 3  
 * **Performance:** 0 ms (Beats 100% of Python submissions!)  
-* **Problem Link:** https://leetcode.com/problems/palindrome-number/ 
+* **Problem Link:** https://leetcode.com 
 
 ### 📝 Problem Statement
 Given an integer `x`, return `true` if `x` is a palindrome, and `false` otherwise. An integer is a palindrome when it reads the same backward as forward (e.g., `121` is a palindrome, while `123` is not).
@@ -68,13 +67,12 @@ Output: true
 3. **Mathematical Reversal:** A `while` loop extracts individual trailing numbers via modulo operations (`x % 10`), aggregates them into a running reversed sequence, and cuts the primary input value down systematically (`x //= 10`).
 4. **Final Evaluation:** Once the math loop terminates, the stored baseline signature (`a`) is checked directly against the newly assembled reversed sequence (`return a == reversed_num`).
 
-
 ---
 
 ## 📌 LeetCode #13: Roman to Integer  
 * **Topic:** Hash Table, Math, String  
 * **Language:** Python 3  
-* **Problem Link:** (https://leetcode.com/problems/roman-to-integer/) 
+* **Problem Link:** https://leetcode.com 
 
 ### 📝 Problem Statement
 Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`. Given a roman numeral, convert it to an integer.
@@ -92,17 +90,26 @@ Explanation: L = 50, V = 5, III = 3.
 3. **Subtraction Rule Handling:** If a character's mapped numerical value is smaller than the following character's value (such as `I` appearing right before `V`), subtract its value from the tracker. 
 4. **Aggregation:** In all standard circumstances where values remain steady or decrease sequentially, simply increment the running `total_sum` calculation.
 
+---
 
-# LeetCode Solutions
+## 🚀 Solved Problems Index
 
-A collection of my verified solutions for LeetCode algorithmic problems, tracked as part of my continuous coding practice.
+| # | Problem Title | Difficulty | Language | Solution File |
+|---|---------------|------------|----------|---------------|
+| 2 | [Add Two Numbers](https://leetcode.com) | 🟡 Medium | Python 3 | [Solution](./2_add_two_numbers.py) |
+| 9 | [Palindrome Number](https://leetcode.com) | 🟢 Easy | Python 3 | [Solution](./palindrome_number.py) |
+| 13 | [Roman to Integer](https://leetcode.com) | 🟢 Easy | Python 3 | [Solution](./roman_to_integer.py) |
+| 14 | [Longest Common Prefix](https://leetcode.com) | 🟢 Easy | Python 3 | [Solution](./14_longest_common_prefix.py) |
+| 21 | [Merge Two Sorted Lists](https://leetcode.com) | 🟢 Easy | Python 3 | [Solution](./21_merge_two_sorted_lists.py) |
+| 26 | [Remove Duplicates from Sorted Array](https://leetcode.com) | 🟢 Easy | Python 3 | [Solution](./solution.py) |
+| 27 | [Remove Element](https://leetcode.com) | 🟢 Easy | Python 3 | [Solution](./solution.py) |
+| 35 | [Search Insert Position](https://leetcode.com) | 🟢 Easy | Python 3 | [Solution](./search_insert_position.py) |
 
-## 🚀 Solved Problems
+---
 
-## 📝 Problem Breakdown
+## 📝 Additional Problem Breakdowns
 
-### [14. Longest Common Prefix][(https://leetcode.com)](https://leetcode.com/problems/longest-common-prefix/)
-
+### 📌 LeetCode #14: Longest Common Prefix
 **Approach:** Vertical Scanning
 - **Concept:** Compare characters of all strings index by index, using the first string as a baseline anchor.
 - **Optimization:** Immediately returns the prefix slice the moment a character mismatch occurs or an out-of-bounds index condition is hit.
@@ -111,25 +118,9 @@ A collection of my verified solutions for LeetCode algorithmic problems, tracked
 - **Time Complexity:** $\mathcal{O}(S)$ where $S$ is the total sum of all characters across all strings in the input array.
 - **Space Complexity:** $\mathcal{O}(1)$ because the vertical scan checks characters in place without allocating extra memory structures.
 
-
-
-# LeetCode Solutions
-
-A collection of my verified solutions for LeetCode algorithmic problems, tracked as part of my continuous coding practice.
-
-## 🚀 Solved Problems
-
-| # | Problem Title | Difficulty | Language | Solution |
-|---|---------------|------------|----------|----------|
-| 14 | [Longest Common Prefix](https://leetcode.com) | Easy | Python | [Solution](./14_longest_common_prefix.py) |
-| 21 | [Merge Two Sorted Lists](https://leetcode.com) | Easy | Python | [Solution](./21_merge_two_sorted_lists.py) |
-
 ---
 
-## 📝 Problem Breakdown
-
-### [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
-
+### 📌 LeetCode #21: Merge Two Sorted Lists
 **Approach:** Two-Pointer Iteration with Dummy Head Node
 - **Concept:** Compare the head nodes of both lists, attach the smaller node to the building `tail`, and step that list pointer forward.
 - **Optimization:** Avoids handling complex starting edge cases by initializing a baseline `ListNode()`, and snaps remaining straggler nodes onto the tail in a single $\mathcal{O}(1)$ step using a ternary operation when one list runs dry.
@@ -138,144 +129,24 @@ A collection of my verified solutions for LeetCode algorithmic problems, tracked
 - **Time Complexity:** $\mathcal{O}(N + M)$ where $N$ and $M$ represent the total number of nodes in each independent linked list.
 - **Space Complexity:** $\mathcal{O}(1)$ as the sorting operations reconnect existing node object references directly in-place.
 
-
-# 🚀 LeetCode Solutions Portfolio
-
-Welcome! This repository tracks my journey solving data structures and algorithms challenges on LeetCode. It serves as a showcase of my problem-solving progress and code quality.
-
-## 🛠️ Solved Problems
-
-| # | Problem Title | Difficulty | Language | Solution Link |
-|---|---|---|---|---|
-| 26 | [Remove Duplicates from Sorted Array](https://leetcode.com) | 🟢 Easy | Python | [solution.py](./solution.py) |
-
 ---
 
-## 📝 Problem Breakdown: #26 Remove Duplicates from Sorted Array
+### 📌 LeetCode #26: Remove Duplicates from Sorted Array
+**Approach:** Two-Pointer In-Place Modification
+- **Concept:** Since the input array is already sorted, all duplicate elements sit right next to each other. 
 
-### Problem Statement
-Given an integer array `nums` sorted in non-decreasing order, remove the duplicates **in-place** such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in `nums`.
-
-### Intuition & Approach
-Since the input array is already sorted, all duplicate elements sit right next to each other. 
+#### Intuition & Steps:
 1. We track a `pointer` index that marks where the next unique element should be written.
 2. We loop through the array with a scanning index `i`.
-3. Whenever `nums[i]` is different from `nums[i-1]`, we know we've hit a brand new unique number.
-4. We copy that unique number forward to `nums[pointer]` and increment our `pointer`.
-
-```
-
-### Complexity
-- **Time Complexity:** $O(N)$ — We traverse the array exactly once, making it highly efficient.
-- **Space Complexity:** $O(1)$ — No extra arrays are created. The modification happens entirely in-place.
-
-
-# 🚀 LeetCode Solutions Portfolio
-
-Welcome! This repository tracks my journey solving data structures and algorithms challenges on LeetCode. It serves as a showcase of my problem-solving progress.
-
-## 🛠️ Solved Problems
-
-| # | Problem Title | Difficulty | Language | Solution Link |
-|---|---|---|---|---|
-| 26 | [Remove Duplicates from Sorted Array](https://leetcode.com) | 🟢 Easy | Python | [solution.py](./remove-duplicates/solution.py) |
-| 27 | [Remove Element](https://leetcode.com) | 🟢 Easy | Python | [solution.py](./remove-element/solution.py) |
+3. Whenever `nums[i]` is different from `nums[pointer]`, we know we've hit a brand new unique number.
+4. We copy that unique number forward to `nums[pointer + 1]` and increment our unique `pointer`.
 
 ---
 
-## 📝 Problem Breakdown: #27 Remove Element
+### 📌 LeetCode #35: Search Insert Position
+**Approach:** Binary Search
+- **Concept:** Continually divide the sorted search space in half to locate the index or isolate the exact point where insertion should occur.
 
-### Problem Statement
-Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` **in-place**. The order of the elements may be changed. Then return the number of elements in `nums` which are not equal to `val`.
-
-### Intuition & Approach
-This problem uses a two-pointer technique to filter out elements without creating a new list.
-1. We initialize a write pointer at the beginning of the array to track where valid elements go.
-2. We use a second pointer to scan through every number in the array sequentially.
-3. Every time we find a number that does not match the target value, we shift it forward to the write pointer's position and advance that pointer.
-4. If a number matches the target value, we simply skip past it.
-
-### Complexity
-- **Time Complexity:** $O(N)$ — The array is traversed exactly once.
-- **Space Complexity:** $O(1)$ — The filtering happens entirely in-place to optimize memory consumption.
-
-
-
-## Find the Index of the First Occurrence in a String
-
-## 📝 Problem Description
-Given two strings `needle` and `haystack`, return the index of the first occurrence of `needle` in `haystack`, or `-1` if `needle` is not part of `haystack`.
-
-**Example 1:**
-- **Input:** `haystack = "sadbutsad"`, `needle = "sad"`
-- **Output:** `0`
-- **Explanation:** `"sad"` occurs at index 0 and 6. The first occurrence is at index 0.
-
-**Example 2:**
-- **Input:** `haystack = "leetcode"`, `needle = "leeto"`
-- **Output:** `-1`
-- **Explanation:** `"leeto"` did not occur in `"leetcode"`, so we return -1.
-
----
-
-## 💡 Solution: Sliding Window Approach
-The algorithm uses a sliding window strategy to look through the `haystack` string. It checks sections of text that are the exact same length as the `needle` and moves forward character by character. 
-
-### Algorithm Logic:
-1. Handle the edge case where `needle` is empty by returning `0`.
-2. Compute the lengths of both strings to establish loop boundaries.
-3. Iterate through the `haystack` only as far as the `needle` can physically fit. This is calculated by subtracting the needle length from the haystack length and adding one.
-4. Extract a substring slice at each index position and compare it directly to the target `needle`.
-5. If an exact match is confirmed, immediately return the current starting index.
-6. If the loop completes entirely without finding any matches, return `-1`.
-
----
-
-## 📊 Complexity Analysis
-
-- **Time Complexity:** $O((N - M + 1) \times M)$ where $N$ is the length of `haystack` and $M$ is the length of `needle`. In the worst-case scenario, extracting a slice and comparing characters takes $O(M)$ time for each step of the loop.
-- **Space Complexity:** $O(1)$ constant auxiliary space since the solution only stores a few primitive variables to track string lengths and loop indices without allocating extra memory structures.
-
-
-# Search Insert Position
-
-## 📝 Problem Description
-Given a sorted array of distinct integers `nums` and a target value `target`, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
-
-You must write an algorithm with **O(log n)** runtime complexity.
-
-**Example 1:**
-- **Input:** `nums = [1,3,5,6]`, `target = 5`
-- **Output:** `2`
-
-**Example 2:**
-- **Input:** `nums = [1,3,5,6]`, `target = 2`
-- **Output:** `1`
-
-**Example 3:**
-- **Input:** `nums = [1,3,5,6]`, `target = 7`
-- **Output:** `4`
-
----
-
-## 💡 Solution: Binary Search
-Since the input array is already sorted and the problem requires an $O(\log n)$ runtime complexity, a standard **Binary Search** approach is used. Instead of iterating sequentially, this strategy continually divides the search space in half.
-
-### Algorithm Logic:
-1. Initialize two boundary pointers: `low` at index `0` and `high` at the final index of the array.
-2. Maintain a loop that runs as long as `low` does not cross past `high`.
-3. Calculate the precise center index (`mid`) of the current boundaries using floor division.
-4. Compare the value at the center position directly against the target:
-   - If the center value matches the target, return its index immediately.
-   - If the center value is smaller than the target, narrow the window to the right half by adjusting `low`.
-   - If the center value is larger than the target, narrow the window to the left half by adjusting `high`.
-5. If the target is missing from the list entirely, the loop finishes, and the `low` pointer naturally settles at the exact insertion index required to maintain sorted order.
-
----
-
-## 📊 Complexity Analysis
-
-- **Time Complexity:** $O(\log n)$ because the algorithm discards half of the remaining array elements on every single check, allowing it to evaluate massive lists rapidly.
-- **Space Complexity:** $O(1)$ constant space since the search boundaries and center calculations are tracked using simple primitive variables without allocating any new arrays or data structures.
-
----
+#### Complexity Analysis
+- **Time Complexity:** $\mathcal{O}(\log n)$ as the remaining items are cut in half at every comparison step.
+- **Space Complexity:** $\mathcal{O}(1)$ using simple primitive tracking bounds variables.
