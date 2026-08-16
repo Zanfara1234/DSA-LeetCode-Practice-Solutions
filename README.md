@@ -199,3 +199,38 @@ This problem uses a two-pointer technique to filter out elements without creatin
 - **Time Complexity:** $O(N)$ — The array is traversed exactly once.
 - **Space Complexity:** $O(1)$ — The filtering happens entirely in-place to optimize memory consumption.
 
+
+# Find the Index of the First Occurrence in a String
+
+## 📝 Problem Description
+Given two strings `needle` and `haystack`, return the index of the first occurrence of `needle` in `haystack`, or `-1` if `needle` is not part of `haystack`.
+
+**Example 1:**
+- **Input:** `haystack = "sadbutsad"`, `needle = "sad"`
+- **Output:** `0`
+- **Explanation:** `"sad"` occurs at index 0 and 6. The first occurrence is at index 0.
+
+**Example 2:**
+- **Input:** `haystack = "leetcode"`, `needle = "leeto"`
+- **Output:** `-1`
+- **Explanation:** `"leeto"` did not occur in `"leetcode"`, so we return -1.
+
+---
+
+## 💡 Solution: Sliding Window Approach
+The algorithm uses a sliding window strategy to look through the `haystack` string. It checks sections of text that are the exact same length as the `needle` and moves forward character by character. 
+
+### Algorithm Logic:
+1. Handle the edge case where `needle` is empty by returning `0`.
+2. Compute the lengths of both strings to establish loop boundaries.
+3. Iterate through the `haystack` only as far as the `needle` can physically fit. This is calculated by subtracting the needle length from the haystack length and adding one.
+4. Extract a substring slice at each index position and compare it directly to the target `needle`.
+5. If an exact match is confirmed, immediately return the current starting index.
+6. If the loop completes entirely without finding any matches, return `-1`.
+
+---
+
+## 📊 Complexity Analysis
+
+- **Time Complexity:** $O((N - M + 1) \times M)$ where $N$ is the length of `haystack` and $M$ is the length of `needle`. In the worst-case scenario, extracting a slice and comparing characters takes $O(M)$ time for each step of the loop.
+- **Space Complexity:** $O(1)$ constant auxiliary space since the solution only stores a few primitive variables to track string lengths and loop indices without allocating extra memory structures.
