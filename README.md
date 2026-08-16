@@ -200,6 +200,7 @@ This problem uses a two-pointer technique to filter out elements without creatin
 - **Space Complexity:** $O(1)$ — The filtering happens entirely in-place to optimize memory consumption.
 
 
+
 ## Find the Index of the First Occurrence in a String
 
 ## 📝 Problem Description
@@ -234,3 +235,46 @@ The algorithm uses a sliding window strategy to look through the `haystack` stri
 
 - **Time Complexity:** $O((N - M + 1) \times M)$ where $N$ is the length of `haystack` and $M$ is the length of `needle`. In the worst-case scenario, extracting a slice and comparing characters takes $O(M)$ time for each step of the loop.
 - **Space Complexity:** $O(1)$ constant auxiliary space since the solution only stores a few primitive variables to track string lengths and loop indices without allocating extra memory structures.
+
+
+# Search Insert Position
+
+## 📝 Problem Description
+Given a sorted array of distinct integers `nums` and a target value `target`, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You must write an algorithm with **O(log n)** runtime complexity.
+
+**Example 1:**
+- **Input:** `nums = [1,3,5,6]`, `target = 5`
+- **Output:** `2`
+
+**Example 2:**
+- **Input:** `nums = [1,3,5,6]`, `target = 2`
+- **Output:** `1`
+
+**Example 3:**
+- **Input:** `nums = [1,3,5,6]`, `target = 7`
+- **Output:** `4`
+
+---
+
+## 💡 Solution: Binary Search
+Since the input array is already sorted and the problem requires an $O(\log n)$ runtime complexity, a standard **Binary Search** approach is used. Instead of iterating sequentially, this strategy continually divides the search space in half.
+
+### Algorithm Logic:
+1. Initialize two boundary pointers: `low` at index `0` and `high` at the final index of the array.
+2. Maintain a loop that runs as long as `low` does not cross past `high`.
+3. Calculate the precise center index (`mid`) of the current boundaries using floor division.
+4. Compare the value at the center position directly against the target:
+   - If the center value matches the target, return its index immediately.
+   - If the center value is smaller than the target, narrow the window to the right half by adjusting `low`.
+   - If the center value is larger than the target, narrow the window to the left half by adjusting `high`.
+5. If the target is missing from the list entirely, the loop finishes, and the `low` pointer naturally settles at the exact insertion index required to maintain sorted order.
+
+---
+
+## 📊 Complexity Analysis
+
+- **Time Complexity:** $O(\log n)$ because the algorithm discards half of the remaining array elements on every single check, allowing it to evaluate massive lists rapidly.
+- **Space Complexity:** $O(1)$ constant space since the search boundaries and center calculations are tracked using simple primitive variables without allocating any new arrays or data structures.
+
