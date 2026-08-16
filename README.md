@@ -278,3 +278,4 @@ Since the input array is already sorted and the problem requires an $O(\log n)$ 
 - **Time Complexity:** $O(\log n)$ because the algorithm discards half of the remaining array elements on every single check, allowing it to evaluate massive lists rapidly.
 - **Space Complexity:** $O(1)$ constant space since the search boundaries and center calculations are tracked using simple primitive variables without allocating any new arrays or data structures.
 
+---
