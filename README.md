@@ -150,3 +150,38 @@ Explanation: L = 50, V = 5, III = 3.
 #### Complexity Analysis
 - **Time Complexity:** $\mathcal{O}(\log n)$ as the remaining items are cut in half at every comparison step.
 - **Space Complexity:** $\mathcal{O}(1)$ using simple primitive tracking bounds variables.
+
+# 58. Length of Last Word
+
+## 📝 Problem Description
+Given a string `s` consisting of words and spaces, return *the length of the **last** word in the string*.
+
+A **word** is a maximal substring consisting of non-space characters only.
+
+### Examples
+**Example 1:**
+* **Input:** `s = "Hello World"`
+* **Output:** `5`
+* **Explanation:** The last word is "World" with length 5.
+
+**Example 2:**
+* **Input:** `s = "   fly me   to   the moon  "`
+* **Output:** `4`
+* **Explanation:** The last word is "moon" with length 4.
+
+---
+
+## 💡 Solution Strategy: Right-to-Left Scan
+Instead of using extra memory to split the string into a list of words, this approach scans the string backwards from the end to achieve optimal space efficiency.
+
+### How it Works
+1. **Skip Trailing Spaces**: If the string ends with spaces, the algorithm skips them because the word counter remains at zero.
+2. **Count the Last Word**: Once a non-space character is encountered, the algorithm starts counting the letters of the last word.
+3. **Early Return**: The moment it hits another space *after* it has already started counting, it knows the last word is complete and stops looking immediately.
+
+---
+
+## 📊 Complexity Analysis
+* **Time Complexity:** $O(N)$ - In the worst-case scenario (such as a single word or no spaces), the algorithm iterates through the string of length $N$ exactly once.
+* **Space Complexity:** $O(1)$ - Constant space is used because the algorithm only keeps track of a single counter integer, without creating any new arrays or strings in memory.
+
